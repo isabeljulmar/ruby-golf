@@ -5,16 +5,17 @@
 def fuzz
     puts '1-100'
     @inp = gets.to_f
-    case @inp
-        when @inp / 3 % 0
+    case @inp 
+        when @inp % 3 == 0
             puts "FIZZ"
-        when @inp / 5 % 0 
+        when @inp % 5 == 0
             puts "BUZZ"
-        when @inp / 3 % 0 && @inp / 5 % 0
+        when @inp % 3 == 0 && @inp % 5 == 0
             puts "FIZZBUZZ"
         else
             puts @inp
     end
+    fuzz
 end
 
 fuzz
